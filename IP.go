@@ -19,11 +19,22 @@ func getMyIP() string{
 	return myIP
 }
 
+func getBroadCastIP(myIP string) string{
+	temp :=strings.Split(myIP,".")
+	fmt.Println(temp)
+	broadCastIP :=temp[0]+"."+temp[1]+"."+temp[2]+"."+"255"
+	return broadCastIP
+	
+
+}
+
 func main(){
 	var ip string
 	ip = getMyIP()
 
 	fmt.Println(ip)
+	bcIP :=getBroadCastIP(ip)
+	fmt.Println(bcIP)
 	
 }
 
